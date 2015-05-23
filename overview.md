@@ -1,2 +1,1 @@
-# What you will make
-Create a Minecraft Photo booth, when you walk in it triggers the PiCamera and takes your picture.
+Build a "Photobooth" out of blocks in Minecraft, and program it to take a picture of you (in real life) when you walk into it
