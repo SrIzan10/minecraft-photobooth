@@ -4,7 +4,7 @@ All contributions are assumed to be licensed under the same license as the sourc
 
 ## Issues
 
-If you find a mistake, bug or other problem, please [open an issue](https://github.com/raspberrypilearning/temperature-log/issues) in this repository.
+If you find a mistake, bug or other problem, please [open an issue](https://github.com/raspberrypilearning/minecraft-photobooth/issues) in this repository.
 
 ## Pull Requests
 
@@ -22,6 +22,6 @@ Unless otherwise specified, everything in this repository is covered by the foll
 
 [![Creative Commons Attribution 4.0 International Licence](http://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/)
 
-***Temperature Log*** by the [Raspberry Pi Foundation](http://www.raspberrypi.org) is licensed under a [Creative Commons Attribution 4.0 International Licence](http://creativecommons.org/licenses/by-sa/4.0/).
+***Minecraft Photobooth*** by [Dan Aldred](https://github.com/TeCoEd) the [Raspberry Pi Foundation](https://www.raspberrypi.org/) is licensed under a [Creative Commons Attribution 4.0 International Licence](http://creativecommons.org/licenses/by-sa/4.0/).
 
-Based on a work at https://github.com/raspberrypilearning/temperature-log
+Based on a work at https://github.com/TeCoEd/minecraft-photobooth
