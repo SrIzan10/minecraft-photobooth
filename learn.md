@@ -1,6 +1,6 @@
-By creating the Minecraft photo-booth you will learn:
+By creating the Minecraft Photobooth you will learn:
 
-- How to set up the PiCamera
-- How to find the player's current position
-- How to trigger  the camera
-- How to save the picture
+- How to control the Minecraft world with the Python API
+- How to find the player's `x`, `y` and `z` coordinates
+- How to use the player's coordinates to trigger the PiCamera
+- How to use functions, `while` loops and `if` statements in Python
