@@ -4,131 +4,134 @@ Create a Photobooth in Minecraft, which you the player enter the Photobooth it t
 
 ## Importing the Minecraft API and PiCamera Module
 
-The first part of the program is to import the Minecraft API. (Application Programming Interface) This enables you to connect to Minecraft and use Python to code.  This will import the PiCamera module to control the camera and the time module to add a small delay between taking the photo and then taking the next photo.
+The first part of the program is to import the Minecraft API (Application Programming Interface). This enables you to connect to Minecraft and use Python to code. This will import the PiCamera module to control the camera and the time module to add a small delay between taking the photo and then taking the next photo.
 
-1. Open the LX Terminal
+1. Open Minecraft from the application menu, and enter or create a new world.
 
-2. Type `sudo IDLE`, this will load the Python IDLE code editor which you will use to write the Photobooth program
+1. Move the Minecraft window to one side of the screen.
 
-3. Open a new window
+1. Open a Terminal window and enter the command:
+    
+    ```bash
+    sudo idle3 &
+    ```
+    
+    This will open up the Python IDLE code editor which you will use to write the Photobooth program.
 
-4. Enter the code shown below and save    
+1. Click `New > Window` to open a new window.
+
+1. Enter the code shown below:
    
-``` python
-from mcpi import minecraft​
-​mc = minecraft.Minecraft.create()
-import time
-import picamera
-```
+	``` python
+	from mcpi import minecraft
+	from picamera import PiCamera
+	from time import sleep
+	
+	mc = minecraft.Minecraft.create()
+	
+	mc.postToChat("Hello world")
+	```
+
+1. Save with `Ctrl + S` and run the program with `F5`. You should see the message "Hello world" appear in the Minecraft world.
 
 ## Testing the PiCamera
 
-Next we need to create a function which will control the PiCamera.  A function is made up of a number of lines of code which control a task, in this example they control the PiCamera.  However, it takes several lines of code to do this. By creating a function you can use a short word or phrase to call the lines of code.  In the code below it triggers the PiCamera every time the `take_the_pic()` function is called.   
+Next we need to create a function which will control the PiCamera. A function is made up of a number of lines of code which control a task, in this example they control the PiCamera. By creating a function you can use a short word or phrase to call the lines of code. In the code below it triggers the PiCamera every time the `take_the_pic()` function is called.
 
-1. Enter the code below
+1. Enter the code between the `import` lines at the top of the code from the previous step:
 
-``` python
-def take_the_pic():
-	with picamera.PiCamera()as camera:
-		camera.start_preview()
-		time.sleep(2)
-		camera.capture('selfie.jpg')
+    ``` python
+    def take_the_pic():
+    	with PiCamera() as camera:
+    		camera.start_preview()
+    		sleep(2)
+    		camera.capture('/home/pi/selfie.jpg')
+    ```
 
-take_the_pic()		
-``` 	
+1. Add a call to the new `take_the_pic` function to the end of your code, so the main part of the program looks like this:
 
-We have set the camera to show a two second preview so that you can strike your pose and smile before the picture is taken.  The image is stored as a file called, selfie.jpg
+    ```python
+    mc = minecraft.Minecraft.create()
+    
+    mc.postToChat("Hello world")
+    take_the_pic()
+    ```
+
+We have set the camera to show a two second preview so that you can strike your pose and smile before the picture is taken. The image is stored as a file called `selfie.jpg` in your home directory.
 
 ## Building a Photobooth 
 
-Now we need to create a Photobooth in the Minecraft environment, this is done manually and can be built where ever you want to locate it.  To open Minecraft, 
+Now we need to create a Photobooth in the Minecraft environment, this is done manually and can be built where ever you want to locate it.
 
-1. Click the start button
-
-2. Select games, coding and Minecraft.  
-
-3. When it opens create a new world.
-
-Using any block type, create a Photobooth, this can be any shape but should have at least one block width of free space inside so that the player can enter.
+Using any block type, create a Photobooth. This can be any shape but should have at least one block width of free space inside so that the player can enter - like a door or gate.
 
 ![](images/Photobooth.jpg)
 
-Once you have created your Photobooth move your player inside and onto the trigger block.  This is the block that the player stands on to run the function that you wrote in step 1, it will trigger the PiCamera.  In the Minecraft environment your position is measured with the `x`, `y` and `z` axis.  Look at the top right of the window and you will see the `x`, `y`, `z` co-ordinates of your player, for example `10.5`, `9.0`, `-44.3`.  Assuming you are still in the Photobooth then these are also the `x`, `y`, `z` co-ordinates of the 'trigger' block in your Photobooth.
+Once you have created your Photobooth move your player inside and onto the trigger block. This is the block that the player stands on to run the function that you wrote in step 1. This block will trigger the PiCamera. In the Minecraft environment your position is measured with the `x`, `y` and `z` axis. Look at the top right of the window and you will see the `x`, `y`, `z` co-ordinates of your player, for example `10.5`, `9.0`, `-44.3`. Assuming you are still in the Photobooth then these are also the `x`, `y`, `z` co-ordinates of the 'trigger' block in your Photobooth.
  
 1. Walk into your Photobooth
 
-2. Record the `x`, `y`, `z`, co-ordinates of your PiCamera 'trigger' block.
+1. Record the `x`, `y`, `z`, co-ordinates of your PiCamera 'trigger' block.
 
 ## Finding where I am?
 
-When you are playing Minecraft your the program will need to check that you are inside the Photobooth, if you are then it will trigger the `take_the_pic` function and take a picture.  To do this Minecraft needs to know where you are in the world, read this and record your position.   To find your position you use the code, `x, y, x = mc.player.getPos()`.  This measures the `x`, `y`, `z` position of your player and saves the values.  You can then use `print pos.x` to print the `x` value.  Now you now the position of the player you can test to see if they are in the Photobooth. 
+When you are playing Minecraft your program will need to verify that you are inside the Photobooth - if you are then it will trigger the `take_the_pic` function and take a picture with the camera. To do this Minecraft needs to know where you are in the world.
 
-1. Add the function below to your PiCamera program
+To find your position you use the code, `x, y, x = mc.player.getPos()`.  This saves the `x`, `y` and `z` position of your player into the variables `x`, `y` and `z`.  You can then use `print(x)` to print the `x` value, or `print(x, y, z)` to see them all. Now you now the position of the player you can test to see if they are in the Photobooth. As we're using Minecraft we can also use `mc.postToChat` to send the coordinates to the Minecraft window.
 
-``` python
-def where_am_i():
+1. Add the code below to your PiCamera program:
+
+    ``` python
 	while True:
 		x, y, z, = mc.player.getPos()
-```
+		mc.postToChat(x, y, z)
+    ```
+    
+1. Save and run the code and you'll see your coordinates printed out.
 	
 ## Testing that you are in the Photobooth 
  
-At this point we have a Photobooth, the co-ordinates of the trigger block, and a function to control the PiCamera and take a picture.  The next step is to test the program identifies when you are in the Photobooth.  To do this we must create a loop which checks if your player's co-ordinates match the trigger block co-ordinates. If they do, then you are standing in the Photobooth.  To do this we use a simple `if` statement, we call these conditionals.  Add the code below to your program. 
+At this point we have a Photobooth, the coordinates of the trigger block, and a function to control the PiCamera and take a picture. The next step is to test the program identifies when you are in the Photobooth. To do this we must create a loop which checks if your player's co-ordinates match the trigger block coordinates. If they do, then you are standing in the Photobooth. To do this we use a simple `if` statement, we call these conditionals.
+
+1. Add the code below to your program, ensuring the coordinates you enter are the location of your own photobooth:
 
 ```python
 while True:
-	where_am_i()
-	time.sleep(2)
+    x, y, z = mc.player.getPos()
+    
+	sleep(3)
+	
 	if x >= 10.5 and y == 9.0 and z == -44.3:
-		print ("You are at the Photobooth!")   
-
-where_am_i()		
+	    mc.postToChat("You are in the Photobooth!")
 ```
 
-1. Save the program and press F5 to test it.
+1. Save and run your code to test it - walk into your photobooth and you should see the message "You at in the photobooth" in the Minecraft window.
 
-2. Walk into your Photobooth
+You will note that the `if` statement checks if `x` value is greater than or equal to `10.5`, this is ensure that it picks up the block as it could have a value of `10.6`. Remember to replace the `x`, `y` and `z` values with the values from your Photobooth.
 
-You will note that the `if` statement checks if `x` value is greater than or equal to 10.5, this is ensure that it picks up the block as it could have a value of 10.6.  Remember to replace the `x`, `y` and `z` values with the values from your Photobooth.
+## Putting it all together
 
-## Putting it all together Part 1
+Now you have a working Photobooth we need to add the PiCamera to take a picture. We will add a quick reminder to smile and then call the PiCamera function `take_the_pic`.
 
-Now you have a working Photobooth we need to add the PiCamera to take a picture.   We will replace the console message with a message in Minecraft to tell you that you are in the Photobooth, a quick reminder to smile and then call the PiCamera function, `take_the_pic()`.  Displaying a message is easily achieved by using the code `mc.postToChat("You are in the Photobooth!")`    
- 
-1. Comment out the print "You are at the Photobooth!"   
+1. Add the instructions to send messages to Minecraft and the call to `take_the_pic` inside your `if` statement:
 
-2. Under and in-line with the commented out `###You are at the Photobooth`, add the following code
+    ```python
+    if x >= 10.5 and y == 9.0 and z == -44.3:
+        mc.postToChat("You are in the Photobooth!")
+        sleep(1)
+        mc.postToChat("Smile!")
+        sleep(1)
+        take_the_pic()
+        mc.postToChat("Check out your picture")
+        break
+    ```
+    
+    This will keep checking your location, and when it matches the location of the photobooth it will take a picture with the camera, then break out of the loop.
 
-```python
-mc.postToChat("You are in the Photobooth!")
-time.sleep(1)
-mc.postToChat("Smile!")
-time.sleep(1)
-take_the_pic()
-mc.postToChat("Check out your picture")
-time.sleep(5)
-```
-3. Delete the `where_am_i()` line	
+## What next?
 
-## Putting it all together Part 2
+1. Try adding a specific block which triggers the camera
 
-Well done you are nearly there, the final part of the project is to run the program and call the function to check where you are.  You will notice now that your original `where_am_I()` function includes all the code to check the players location and trigger the camera.  Add a simple chat message to prompt the player to find the Photobooth and you are ready.  
+1. Try adding further blocks to control PiCamera settings such as taking a video or applying a filter
 
-1. Add the code below to the bottom of your program
-
-```python
-mc.postToChat("Find the Photo-Booth")
-where_am_i()
-```
-2. Save the program
-
-3. Press F5 to run and test the Photobooth
-
-## What next
-
-1. Add a specific block which triggers the camera
-
-2. Add further blocks to control PiCamera settings such as taking a video or applying a filter 
-
-3. Use blocks to start and stop the PiCamera recording a video
-
+1. Try using blocks to start and stop the PiCamera recording a video
