@@ -111,7 +111,7 @@ At this point we have a Photobooth, the coordinates of the trigger block, and a 
 
     Ensure the coordinates you enter are the location of your own photobooth.
 
-1. Save and run your code to test it - walk into your photobooth and you should see the message "You at in the photobooth" in the Minecraft window.
+1. Save and run your code to test it - walk into your photobooth and you should see the message "You are in the photobooth" in the Minecraft window.
 
 You will note that the `if` statement checks if `x` value is greater than or equal to `10.5`, this is ensure that it picks up the block as it could have a value of `10.6`. Remember to replace the `x`, `y` and `z` values with the values from your Photobooth.
 
