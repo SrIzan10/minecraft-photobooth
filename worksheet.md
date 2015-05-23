@@ -2,13 +2,15 @@
 
 Create a Photobooth in Minecraft, which you the player enter the Photobooth it triggers the PiCamera and takes your picture, don't forget to smile.  Before starting ensure that your PiCamera is attached to the Raspberry Pi and enabled in the settings.  This is covered in this tutorial.  Once you have connected the camera boot up the Raspberry Pi
 
-## Importing the Minecraft API and PiCamera Module
+## Importing the Minecraft and PiCamera Modules
 
 The first part of the program is to import the Minecraft API (Application Programming Interface). This enables you to connect to Minecraft and use Python to code. This will import the PiCamera module to control the camera and the time module to add a small delay between taking the photo and then taking the next photo.
 
 1. Open Minecraft from the application menu, and enter or create a new world.
 
 1. Move the Minecraft window to one side of the screen.
+
+    You'll need to use the `Tab` key to take your mouse's focus away from the Minecraft window to move it. You'll need this later when you switch between the Minecraft and Python windows.
 
 1. Open a Terminal window and enter the command:
     
@@ -79,7 +81,7 @@ When you are playing Minecraft your program will need to verify that you are ins
 
 To find your position you use the code, `x, y, x = mc.player.getPos()`.  This saves the `x`, `y` and `z` position of your player into the variables `x`, `y` and `z`.  You can then use `print(x)` to print the `x` value, or `print(x, y, z)` to see them all. Now you now the position of the player you can test to see if they are in the Photobooth. As we're using Minecraft we can also use `mc.postToChat` to send the coordinates to the Minecraft window.
 
-1. Add the code below to your PiCamera program:
+1. Remove the "Hello world" and `take_the_pic` lines and replace with:
 
     ``` python
 	while True:
@@ -87,23 +89,27 @@ To find your position you use the code, `x, y, x = mc.player.getPos()`.  This sa
 		mc.postToChat(x, y, z)
     ```
     
-1. Save and run the code and you'll see your coordinates printed out.
+1. Save and run the code and you'll see your coordinates posted to the Minecraft window.
+
+1. Focus on the Python window and press `Ctrl + C` to stop the code running.
 	
 ## Testing that you are in the Photobooth 
  
 At this point we have a Photobooth, the coordinates of the trigger block, and a function to control the PiCamera and take a picture. The next step is to test the program identifies when you are in the Photobooth. To do this we must create a loop which checks if your player's co-ordinates match the trigger block coordinates. If they do, then you are standing in the Photobooth. To do this we use a simple `if` statement, we call these conditionals.
 
-1. Add the code below to your program, ensuring the coordinates you enter are the location of your own photobooth:
+1. Change the lines inside your `while` loop to match the code below:
 
-```python
-while True:
-    x, y, z = mc.player.getPos()
-    
-	sleep(3)
-	
-	if x >= 10.5 and y == 9.0 and z == -44.3:
-	    mc.postToChat("You are in the Photobooth!")
-```
+    ```python
+    while True:
+        x, y, z = mc.player.getPos()
+        
+    	sleep(3)
+    	
+    	if x >= 10.5 and y == 9.0 and z == -44.3:
+    	    mc.postToChat("You are in the Photobooth!")
+    ```
+
+    Ensure the coordinates you enter are the location of your own photobooth.
 
 1. Save and run your code to test it - walk into your photobooth and you should see the message "You at in the photobooth" in the Minecraft window.
 
