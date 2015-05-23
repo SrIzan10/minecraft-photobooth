@@ -81,6 +81,14 @@ When you are playing Minecraft your program will need to verify that you are ins
 
 To find your position you use the code, `x, y, x = mc.player.getPos()`.  This saves the `x`, `y` and `z` position of your player into the variables `x`, `y` and `z`.  You can then use `print(x)` to print the `x` value, or `print(x, y, z)` to see them all. Now you now the position of the player you can test to see if they are in the Photobooth. As we're using Minecraft we can also use `mc.postToChat` to send the coordinates to the Minecraft window.
 
+1. Add the message "Find the Photobooth" after the `minecraft.Minecraft.create()` line like so:
+
+    ```python
+    mc = minecraft.Minecraft.create()
+
+    mc.postToChat("Find the Photobooth")
+    ```
+
 1. Remove the "Hello world" and `take_the_pic` lines and replace with:
 
     ``` python
