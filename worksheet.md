@@ -1,6 +1,8 @@
 # Minecraft Photobooth
 
-Create a working photobooth in Minecraft: when the player enters the photobooth it triggers the PiCamera and takes their picture. Don't forget to smile!  Before starting ensure that your PiCamera is attached to the Raspberry Pi and enabled in the settings.  This is covered in this tutorial.  Once you have connected the camera boot up the Raspberry Pi
+Create a working photobooth in Minecraft: when the player enters the photobooth it triggers the camera module and takes their picture. Don't forget to smile! 
+
+Please note that, before starting this activity, you must ensure that your camera module is attached to the Raspberry Pi and enabled in the settings.  This is covered in this tutorial.  Once you have connected the camera, boot up the Raspberry Pi.
 
 ## Importing the Minecraft and PiCamera Modules
 
