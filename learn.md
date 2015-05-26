@@ -1,4 +1,4 @@
-By creating the Minecraft Photobooth you will learn:
+By creating the Minecraft photobooth you will learn:
 
 - How to control the Minecraft world with the Python API
 - How to find the player's `x`, `y` and `z` coordinates
