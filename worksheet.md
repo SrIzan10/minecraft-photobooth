@@ -14,11 +14,9 @@ The first part of the program is to import the Minecraft API (Application Progra
 
     You'll need to use the `Tab` key to take your mouse's focus away from the Minecraft window to move it. You'll need this later when you switch between the Minecraft and Python windows.
 
-1. Open a Terminal window and enter the command:
+1. Open Python 3 from the applications menu:
 
-    ```bash
-    sudo idle3 &
-    ```
+    ![](python3-app-menu.png)
 
     This will open up the Python IDLE code editor which you will use to write the photobooth program.
 
