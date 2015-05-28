@@ -16,7 +16,7 @@ The first part of the program is to import the Minecraft API (Application Progra
 
 1. Open Python 3 from the applications menu:
 
-    ![](python3-app-menu.png)
+    ![](images/python3-app-menu.png)
 
     This will open up the Python IDLE code editor which you will use to write the photobooth program.
 
