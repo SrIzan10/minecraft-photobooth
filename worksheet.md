@@ -2,7 +2,31 @@
 
 Create a working photobooth in Minecraft: when the player enters the photobooth it triggers the camera module and takes their picture. Don't forget to smile! 
 
-Please note that, before starting this activity, you must ensure that your camera module is attached to the Raspberry Pi and enabled in the settings.  This is covered in this tutorial.  Once you have connected the camera, boot up the Raspberry Pi.
+## Connect the camera
+
+Before booting your Pi, you'll need to connect the camera.
+
+1. Locate the camera port next to the Ethernet port.
+1. Lift the tab on the top.
+1. Place the strip in the connector, with the blue side facing the Ethernet port.
+1. While holding the strip in place, push down the tab.
+1. Turn the power on to boot the Pi.
+
+## Test the camera
+
+1. Log in and boot to desktop.
+1. Open `LXTerminal` from the desktop or application menu.
+1. Enter the following command in ther terminal window:
+
+    ```bash
+    raspistill -o image1.jpg
+    ```
+
+1. Adjust the camera to point at yourself or an object.
+1. You should see a preview appear on the screen for a few seconds, and then change briefly while the image is captured. It doesn't matter if the picture is upside-down; we'll come to that later.
+1. Run the command `ls` to see the files in your home directory; you should see `image1.jpg` listed.
+1. Click the file manager icon in the taskbar and you should see some folders and files.
+1. Double-click `image1.jpg` to preview it.
 
 ## Importing the Minecraft and PiCamera Modules
 
