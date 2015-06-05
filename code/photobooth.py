@@ -10,7 +10,7 @@ def take_the_pic():
 
 mc = minecraft.Minecraft.create()
 
-mc.postToChat("Find the Photobooth")
+mc.postToChat("Find the photobooth")
 
 while True:
     x, y, z = mc.player.getPos()
@@ -18,7 +18,7 @@ while True:
     sleep(3)
     
     if x >= 10.5 and y == 9.0 and z == -44.3:
-        mc.postToChat("You are in the Photobooth!")
+        mc.postToChat("You are in the photobooth!")
         sleep(1)
         mc.postToChat("Smile!")
         sleep(1)
