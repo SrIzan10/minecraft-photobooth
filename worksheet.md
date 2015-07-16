@@ -105,7 +105,7 @@ To find your position, you use the code, `x, y, x = mc.player.getPos()`.  This s
 
 ## Testing whether you are in the Photobooth
 
-At this point we have a photobooth, the coordinates of the trigger block, and a function to control the camera module and take a picture. The next step is to test whether the program identifies when you are in the photobooth. To do this we must create a loop which checks if your player's co-ordinates match the trigger block coordinates. If they do, then you are standing in the hotobooth. To do this we use a simple `if` statement, which we call a conditional.
+At this point we have a photobooth, the coordinates of the trigger block, and a function to control the camera module and take a picture. The next step is to test whether the program identifies when you are in the photobooth. To do this we must create a loop which checks if your player's co-ordinates match the trigger block coordinates. If they do, then you are standing in the photobooth. To do this we use a simple `if` statement, which we call a conditional.
 
 1. Change the lines inside your `while` loop to match the code below:
 
