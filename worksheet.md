@@ -42,7 +42,7 @@ The first thing you need to do is import the Minecraft API (Application Programm
 
 Next we need to create a function which will control the camera. A function is made up of a number of lines of code which control a task. In this instance, the code controls the camera. By creating a function, you can use a short word or phrase to call the lines of code. In the code below it triggers the camera every time the `take_the_pic()` function is called.
 
-1. Enter the code between the `import` lines at the top of the code from the previous step:
+1. Enter the code below the `import` lines at the top of the code from the previous step:
 
     ``` python
     def take_the_pic():
