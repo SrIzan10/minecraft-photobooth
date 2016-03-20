@@ -1,27 +1,24 @@
-from mcpi import minecraft
+from mcpi.minecraft import Minecraft
 from picamera import PiCamera
 from time import sleep
 
-def take_the_pic():
-    with PiCamera() as camera:
-        camera.start_preview()
-        sleep(2)
-        camera.capture('/home/pi/selfie.jpg')
-
-mc = minecraft.Minecraft.create()
+mc = Minecraft.create()
+camera = PiCamera()
 
 mc.postToChat("Find the Photobooth")
 
 while True:
     x, y, z = mc.player.getPos()
-       
-    sleep(3)
-    
+
     if x >= 10.5 and y == 9.0 and z == -44.3:
         mc.postToChat("You are in the Photobooth!")
         sleep(1)
         mc.postToChat("Smile!")
         sleep(1)
-        take_the_pic()
+        camera.start_preview()
+        sleep(2)
+        camera.capture('/home/pi/selfie.jpg')
+        camera.stop_preview()
         mc.postToChat("Check out your picture")
-        sleep(5)
+
+    sleep(3)
