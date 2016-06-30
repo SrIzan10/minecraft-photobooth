@@ -91,7 +91,7 @@ To find your position, you use the code, `x, y, x = mc.player.getPos()`.  This s
     ``` python
 	while True:
 		x, y, z, = mc.player.getPos()
-		mc.postToChat(x, y, z)
+		mc.postToChat((x, y, z))
     ```
 
 1. Save and run the code and you'll see your coordinates posted to the Minecraft window.
