@@ -1,0 +1,28 @@
+---
+title: Minecraft Photobooth
+hero_image: images/banner.png
+description: Build a photobooth out of blocks in Minecraft, and program it to take
+  a picture
+original_url: https://raspberrypi.org/learning/minecraft-photobooth
+theme: red
+duration: 2
+listed: false
+ingredient: false
+copyedit: true
+curriculum: creator, design-0, programming-0, phys-comp-0, manufacture-0, community-0
+interests: ''
+technologies: rpi, physical computing, python
+site_areas: ''
+steps:
+- title: Introduction
+- title: What you will need
+- title: Minecraft Photobooth
+- title: Connect the camera
+- title: Importing the Minecraft and PiCamera Modules
+- title: Testing the camera module
+- title: Building a photobooth
+- title: Finding your position
+- title: Testing whether you are in the Photobooth
+- title: Putting it all together
+- title: What next?
+
