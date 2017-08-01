@@ -4,7 +4,7 @@ description: Build a photobooth out of blocks in Minecraft, and program it to ta
 original_url: https://raspberrypi.org/learning/minecraft-photobooth
 theme: red
 duration: 2
-listed: false
+listed: true
 ingredient: false
 copyedit: true
 curriculum: creator, design-0, programming-0, phys-comp-0, manufacture-0, community-0
