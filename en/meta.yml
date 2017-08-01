@@ -1,8 +1,7 @@
 ---
 title: Minecraft Photobooth
 hero_image: images/banner.png
-description: Build a photobooth out of blocks in Minecraft, and program it to take
-  a picture
+description: Build a photobooth out of blocks in Minecraft, and program it to take a picture
 original_url: https://raspberrypi.org/learning/minecraft-photobooth
 theme: red
 duration: 2
