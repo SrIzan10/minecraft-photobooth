@@ -11,5 +11,3 @@ Once you have created your photobooth, you need to be able to move your player i
 - Walk into your photobooth
 
 - Record the `x`, `y`, `z`, co-ordinates of your camera 'trigger' block.
-
-[[[rpi-python-minecraft-steves-position]]]
