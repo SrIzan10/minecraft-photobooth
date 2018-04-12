@@ -1,26 +1,22 @@
-## Finding your position
+## Putting it all together
 
-When you are playing Minecraft, your program will need to verify that you are inside the photobooth. If you are, then it will trigger the `take_the_pic` function and take a picture with the camera. To do this, Minecraft needs to know where you are in the world.
+Now you have a working photobooth we need to add the camera module to take a picture. We will add a quick reminder to smile and then call the camera capture code.
 
-To find your position, you use the code, `x, y, x = mc.player.getPos()`.  This saves the `x`, `y`, and `z` position of your player into the variables `x`, `y`, and `z`.  You can then use `print(x)` to print the `x` value, or `print(x, y, z)` to see them all. Now you know the position of the player, you can test to see if they are in the photobooth. As we're using Minecraft we can also use `mc.postToChat` to send the coordinates to the Minecraft window.
-
-- Change the message "Hello world" to "Find the photobooth" after the `Minecraft.create()` line like so:
+- Add the instructions to send messages to Minecraft and the call to `capture()` inside your `if` statement:
 
     ```python
-    mc = Minecraft.create()
+    if x >= 10.5 and y == 9.0 and z == -44.3:
+        mc.postToChat("You are in the Photobooth!")
+        sleep(1)
+        mc.postToChat("Smile!")
+        sleep(1)
+        camera.start_preview()
+        sleep(2)
+        camera.capture('/home/pi/selfie.jpg')
+        camera.stop_preview()
 
-    mc.postToChat("Find the photobooth")
+    sleep(3)
     ```
 
-- Add to the end of your code:
-
-    ``` python
-	while True:
-		x, y, z, = mc.player.getPos()
-		mc.postToChat((x, y, z))
-    ```
-
-- Save and run the code and you'll see your coordinates posted to the Minecraft window.
-
-- Focus on the Python window and press `Ctrl + C` to stop the code running.
+This will keep checking your location. When your location matches that of the photobooth, it will take a picture with the camera.
 

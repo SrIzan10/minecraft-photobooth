@@ -1,4 +1,19 @@
-## Connect the camera
+## Take a picture
 
-Before booting your Pi, you'll need to connect the camera. You can find instructions on how to do this on the [camera module setup](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera) page. 
+Next, you'll write some code to take a picture with the camera.
+
+- Add the following lines to the end of your program:
+
+    ``` python
+	camera.start_preview()
+	sleep(2)
+	camera.capture('/home/pi/selfie.jpg')
+	camera.stop_preview()
+    ```
+
+    We have set the camera to show a two second preview so that you can strike your pose and smile before the picture is taken. The image is stored as a file called `selfie.jpg` in your home directory.
+
+- Save and run your program to take a picture!
+
+- Open the File Manager to view the picture you took.
 

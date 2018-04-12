@@ -1,5 +1,5 @@
-## What you will need
+## Connect the camera
 
-### Hardware
+Before booting your Pi, you'll need to connect the camera and test it works. 
 
-* 1 x Raspberry Pi camera module
+[[[rpi-picamera-connect-camera]]]
