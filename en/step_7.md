@@ -1,14 +1,22 @@
-## Building a photobooth
+## Testing whether you are in the Photobooth
 
-Now you need to create a photobooth in the Minecraft environment. This is done manually and the photobooth can be built whereever you want to locate it.
+At this point we have a photobooth, the coordinates of the trigger block, and code to control the camera module and take a picture. The next step is to test whether the program identifies when you are in the photobooth. To do this we must create a loop which checks if your player's co-ordinates match the trigger block coordinates. If they do, then you are standing in the photobooth. To do this we use a simple `if` statement, which we call a conditional.
 
-Using any block type, build your photobooth. It can be any shape you like, but it should have at least one block width of free space inside so that the player can enter, like a door or gate.
+- Change the lines inside your `while` loop to match the code below:
 
-![Photobooth](images/photobooth.png)
+    ```python
+    while True:
+        x, y, z = mc.player.getPos()
 
-Once you have created your photobooth, you need to be able to move your player inside and onto the trigger block. This is the block that the player stands on to run the function that you wrote in step 1, which will trigger the camera. In the Minecraft environment, your position is given in reference to the `x`, `y`, and `z` axis. Look at the top left of the window and you will see the `x`, `y`, `z` co-ordinates of your player, for example `10.5`, `9.0`, `-44.3`. Assuming you are still in the photobooth then these are also the `x`, `y`, `z` co-ordinates of the 'trigger' block in your photobooth.
+    	sleep(3)
 
-- Walk into your photobooth
+    	if x >= 10.5 and y == 9.0 and z == -44.3:
+    	    mc.postToChat("You are in the photobooth!")
+    ```
 
-- Record the `x`, `y`, `z`, co-ordinates of your camera 'trigger' block.
+    Ensure the coordinates you enter are the location of your own photobooth.
+
+- Save and run your code to test it: walk into your photobooth and you should see the message "You are in the photobooth!" in the Minecraft window.
+
+You will note that the `if` statement checks if `x` value is greater than or equal to `10.5`: this is ensure that it picks up the block as it could have a value of `10.6`. Remember to replace the `x`, `y`, and `z` values with the values from your photobooth.
 

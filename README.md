@@ -2,12 +2,13 @@
 
 Build a photobooth out of blocks in Minecraft, and program it to take a picture of you (in real life!) when you walk into it
 
-![](cover.png)
+![](en/images/banner/png.png)
 
 ## Requirements
 
 ### Hardware
 
+- 1 x Raspberry pi
 - 1 x Raspberry Pi camera module
 
 ### Software
