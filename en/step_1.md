@@ -3,7 +3,7 @@ Build a photobooth out of blocks in Minecraft, and program it to take a picture 
 
 ## What you will make
 
-<video width="1024" height="768" controls>
+<video width="800" height="600" controls autoplay>
 <source src="images/mcphotobooth.webm" type="video/webm">
 Your browser does not support WebM video, so try FireFox or Chrome.
 </video>
