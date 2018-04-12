@@ -20,8 +20,6 @@ title: What you will need
 
 * Raspberry Pi camera module
 
-content
-
 --- /collapse ---
 
 --- collapse ---
