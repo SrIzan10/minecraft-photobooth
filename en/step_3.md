@@ -2,32 +2,56 @@
 
 The first thing you need to do is import the Minecraft API (Application Programming Interface). This enables you to connect to Minecraft and use Python to code. You also need to import the PiCamera module to control the camera and the time module to add a small delay between taking the photo and then taking the next photo.
 
-- Open Minecraft from the application menu; enter an existing world or create a new one.
+--- task ---
 
-- Move the Minecraft window to one side of the screen.
+Open Minecraft from the application menu; enter an existing world or create a new one.
 
-    You'll need to use the `Tab` key to take your mouse's focus away from the Minecraft window to move it. You'll need this later when you switch between the Minecraft and Python windows.
+--- /task ---
 
-- Open Python 3 from the **programming** menu:
+--- task ---
 
-    ![Open Python 3](images/python3-app-menu.png)
+Move the Minecraft window to one side of the screen.
 
-    This will open up the Python IDLE code editor which you will use to write the photobooth program.
+You'll need to use the `Tab` key to take your mouse's focus away from the Minecraft window to move it. You'll need this later when you switch between the Minecraft and Python windows.
 
-- Click `New > Window` to open a new window.
+--- /task ---
 
-- Enter the code shown below:
+--- task ---
 
-	``` python
-	from mcpi.minecraft import Minecraft
-	from picamera import PiCamera
-	from time import sleep
+Open Python 3 from the **programming** menu:
 
-	mc = Minecraft.create()
-    camera = PiCamera()
+![Open Python 3](images/python3-app-menu.png)
 
-	mc.postToChat("Hello world")
-	```
+This will open up the Python IDLE code editor which you will use to write the photobooth program.
 
-- Save with `Ctrl + S` and run the program with `F5`. You should see the message "Hello world" appear in the Minecraft world.
+--- /task ---
+
+--- task ---
+
+Click `New > Window` to open a new window.
+
+--- /task ---
+
+--- task ---
+
+Enter the code shown below:
+
+``` python
+from mcpi.minecraft import Minecraft
+from picamera import PiCamera
+from time import sleep
+
+mc = Minecraft.create()
+camera = PiCamera()
+
+mc.postToChat("Hello world")
+```
+
+--- /task ---
+
+--- task ---
+
+Save with `Ctrl + S` and run the program with `F5`. You should see the message "Hello world" appear in the Minecraft world.
+
+--- /task ---
 
